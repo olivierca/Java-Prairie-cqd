@@ -28,11 +28,13 @@ public class Mower {
     }
 
     // execute les déplacements de la tondeuse
-    public void move(ArrayList<Move> moves) {
-        for (Move dir : moves) {
-            switch (dir.getdir()) {
+    public void move(String commands) {
+        char moves [] = commands.toCharArray();
+        for (char dir : moves) {
+            switch (dir) {
                 case 'F':         // déplacement
-                    switch (mDir) {
+                    switch (mDir)
+                    {
                         case N:
                             if (posY < maxGrilleY) posY++;
                             break;
